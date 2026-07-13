@@ -1,0 +1,132 @@
+.job-search-bar-section{
+
+    width:100%;
+    margin-top:-45px;
+    position:relative;
+    z-index:20;
+
+}
+
+.job-search-bar-container{
+
+    max-width:1150px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    background:#fff;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.job-search-input-group{
+
+    flex:1;
+
+    display:flex;
+    align-items:center;
+
+    border:1px solid #dcdcdc;
+
+    border-radius:12px;
+
+    padding:0 15px;
+
+    transition:.3s;
+
+    height:58px;
+
+}
+
+.job-search-input-group:focus-within{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+.job-search-icon{
+
+    color:#2563eb;
+
+    font-size:18px;
+
+    margin-right:12px;
+
+}
+
+.job-search-input-group input{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    font-size:16px;
+
+    background:transparent;
+
+}
+
+.job-search-btn{
+
+    height:58px;
+
+    padding:0 34px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    transition:.3s;
+
+}
+
+.job-search-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+@media(max-width:900px){
+
+.job-search-bar-container{
+
+flex-direction:column;
+
+}
+
+.job-search-input-group{
+
+width:100%;
+
+}
+
+.job-search-btn{
+
+width:100%;
+
+}
+
+}

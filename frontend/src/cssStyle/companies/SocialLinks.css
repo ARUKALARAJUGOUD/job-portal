@@ -1,0 +1,193 @@
+/* ==========================================
+   SOCIAL LINKS SECTION
+========================================== */
+
+.social-links-section{
+    background:#ffffff;
+    border-radius:18px;
+    padding:35px;
+    margin-bottom:35px;
+
+    border:1px solid #edf2f7;
+
+    box-shadow:0 8px 25px rgba(15,23,42,.06);
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.social-links-title{
+    font-size:1.55rem;
+    font-weight:700;
+    color:#1e293b;
+    margin-bottom:8px;
+}
+
+.social-links-subtitle{
+    font-size:.95rem;
+    color:#64748b;
+    margin-bottom:30px;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.social-links-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:22px;
+
+}
+
+/* ==========================================
+   INPUT GROUP
+========================================== */
+
+.social-input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.social-input-group label{
+
+    font-size:.92rem;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+    color:#334155;
+
+}
+
+/* ==========================================
+   INPUT WITH ICON
+========================================== */
+
+.social-input{
+
+    display:flex;
+
+    align-items:center;
+
+    border:1px solid #dbe4ee;
+
+    border-radius:10px;
+
+    background:#fff;
+
+    transition:.3s;
+
+    overflow:hidden;
+
+}
+
+.social-input:hover{
+
+    border-color:#2563eb;
+
+}
+
+.social-input:focus-within{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+.social-icon{
+
+    width:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:20px;
+
+    color:#2563eb;
+
+    background:#f8fafc;
+
+    border-right:1px solid #e5e7eb;
+
+}
+
+.social-input input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    padding:14px 18px;
+
+    font-size:.95rem;
+
+    background:transparent;
+
+}
+
+.social-input input::placeholder{
+
+    color:#94a3b8;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.social-links-section{
+
+padding:25px;
+
+}
+
+.social-links-title{
+
+font-size:1.35rem;
+
+}
+
+.social-icon{
+
+width:50px;
+
+font-size:18px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.social-links-section{
+
+padding:20px;
+
+}
+
+.social-input input{
+
+padding:12px 15px;
+
+font-size:.9rem;
+
+}
+
+}

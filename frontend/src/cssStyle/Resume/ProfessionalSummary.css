@@ -1,0 +1,8 @@
+.professional-summary-section {
+  margin-top: 30px;
+}
+
+.professional-summary-section .resume-form-group textarea {
+  min-height: 220px;
+  resize: vertical;
+}

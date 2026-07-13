@@ -1,0 +1,262 @@
+/* ===========================
+   PAGE
+=========================== */
+
+.get-companies-page{
+    width:90%;
+    max-width:1400px;
+    margin:40px auto;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.get-companies-header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.get-companies-header h1{
+    font-size:2.3rem;
+    color:#1f2937;
+    margin-bottom:10px;
+}
+
+.get-companies-header p{
+    color:#6b7280;
+    font-size:16px;
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.get-companies-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(360px,1fr));
+    gap:28px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.get-company-card{
+    background:#fff;
+    border-radius:18px;
+    padding:24px;
+    border:1px solid #e5e7eb;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+    transition:.35s;
+}
+
+.get-company-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(37,99,235,.12);
+}
+
+/* ===========================
+   COMPANY TOP
+=========================== */
+
+.get-company-top{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.get-company-logo{
+    width:78px;
+    height:78px;
+    border-radius:16px;
+    object-fit:contain;
+    background:#fff;
+    border:1px solid #ddd;
+    padding:10px;
+}
+
+.get-company-top h2{
+    color:#111827;
+    font-size:22px;
+    margin-bottom:6px;
+}
+
+.get-company-top span{
+    color:#2563eb;
+    font-weight:600;
+    font-size:15px;
+}
+
+/* ===========================
+   RECRUITER
+=========================== */
+
+.get-recruiter-box{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-radius:14px;
+    background:#f8fafc;
+    margin-bottom:25px;
+}
+
+.get-recruiter-img{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #2563eb;
+}
+
+.get-recruiter-box h4{
+    color:#111827;
+    margin-bottom:5px;
+    font-size:17px;
+}
+
+.get-recruiter-box p{
+    color:#6b7280;
+    font-size:14px;
+}
+
+/* ===========================
+   DETAILS
+=========================== */
+
+.get-company-details{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    margin-bottom:28px;
+}
+
+.get-company-details div{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#374151;
+    font-size:15px;
+}
+
+.get-company-details svg{
+    color:#2563eb;
+    min-width:18px;
+    font-size:16px;
+}
+
+.get-company-details span{
+    word-break:break-word;
+}
+
+.get-company-details a{
+    color:#2563eb;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.get-company-details a:hover{
+    text-decoration:underline;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.company-view-btn{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+
+    border:none;
+    outline:none;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    background:#2563eb;
+    color:white;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.company-view-btn:hover{
+    background:#1d4ed8;
+    gap:16px;
+}
+
+.company-view-btn svg{
+    transition:.3s;
+}
+
+.company-view-btn:hover svg{
+    transform:translateX(5px);
+}
+
+/* ===========================
+   LOADING
+=========================== */
+
+.get-companies-loading{
+    height:70vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.get-companies-loading h2{
+    color:#2563eb;
+    font-size:28px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.get-companies-page{
+    width:95%;
+}
+
+.get-companies-grid{
+    grid-template-columns:1fr;
+}
+
+.get-company-card{
+    padding:20px;
+}
+
+.get-company-top{
+    gap:15px;
+}
+
+.get-company-logo{
+    width:65px;
+    height:65px;
+}
+
+.get-company-top h2{
+    font-size:20px;
+}
+
+.get-recruiter-img{
+    width:52px;
+    height:52px;
+}
+
+.company-view-btn{
+    font-size:14px;
+}
+
+}

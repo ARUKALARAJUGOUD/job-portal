@@ -1,0 +1,102 @@
+.resume-settings-section{
+    margin-top:30px;
+}
+
+.resume-settings-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.resume-switch-card{
+    border:1px solid #dbeafe;
+    border-radius:12px;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#f8fbff;
+}
+
+.resume-switch-card h4{
+    margin-bottom:6px;
+    color:#1e293b;
+}
+
+.resume-switch-card p{
+    color:#64748b;
+    font-size:14px;
+}
+
+.resume-switch{
+    position:relative;
+    display:inline-block;
+    width:60px;
+    height:32px;
+}
+
+.resume-switch input{
+    opacity:0;
+    width:0;
+    height:0;
+}
+
+.resume-slider{
+    position:absolute;
+    cursor:pointer;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#cbd5e1;
+    transition:.3s;
+    border-radius:50px;
+}
+
+.resume-slider::before{
+    content:"";
+    position:absolute;
+    height:24px;
+    width:24px;
+    left:4px;
+    bottom:4px;
+    background:white;
+    transition:.3s;
+    border-radius:50%;
+}
+
+.resume-switch input:checked + .resume-slider{
+    background:#2563eb;
+}
+
+.resume-switch input:checked + .resume-slider::before{
+    transform:translateX(28px);
+}
+
+.resume-form-group select{
+    width:100%;
+    padding:14px;
+    border-radius:10px;
+    border:1px solid #cbd5e1;
+    outline:none;
+    font-size:15px;
+}
+
+.resume-form-group select:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+@media(max-width:768px){
+
+.resume-settings-grid{
+grid-template-columns:1fr;
+}
+
+.resume-switch-card{
+flex-direction:column;
+align-items:flex-start;
+gap:20px;
+}
+
+}

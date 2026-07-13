@@ -1,0 +1,230 @@
+/* ===========================
+      Navigation Container
+=========================== */
+
+.navbar-navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===========================
+      Navigation Link
+=========================== */
+
+.navbar-navigation-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  text-decoration: none;
+
+  color: #475569;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  border-radius: 12px;
+
+  transition: all .25s ease;
+}
+
+/* ===========================
+      Icon
+=========================== */
+
+.navbar-navigation-icon {
+  font-size: 16px;
+}
+
+/* ===========================
+      Hover
+=========================== */
+
+.navbar-navigation-link:hover {
+  color: #2563eb;
+  background: #eff6ff;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+      Active Link
+=========================== */
+
+.navbar-navigation-link.active {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  box-shadow: 0 8px 18px rgba(37,99,235,.25);
+}
+
+.navbar-navigation-link.active .navbar-navigation-icon {
+  color: white;
+}
+
+/* ===================================================
+              MOBILE MENU BUTTON
+=================================================== */
+
+.navbar-mobile-button {
+  display: none;
+}
+
+.navbar-mobile-button button {
+  width: 46px;
+  height: 46px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 22px;
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.navbar-mobile-button button:hover {
+  background: #2563eb;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ===================================================
+                MOBILE DRAWER
+=================================================== */
+
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(15,23,42,.45);
+  backdrop-filter: blur(2px);
+
+  z-index: 9998;
+
+  animation: fadeOverlay .3s ease;
+}
+
+.mobile-nav-menu {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 280px;
+  height: 100vh;
+
+  background: white;
+
+  overflow-y: auto;
+
+  z-index: 9999;
+
+  box-shadow: 10px 0 35px rgba(0,0,0,.15);
+}
+
+@keyframes fadeOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===================================================
+                DRAWER HEADER
+=================================================== */
+
+.mobile-nav-header {
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 22px;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.mobile-nav-header h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.mobile-nav-header button {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 20px;
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.mobile-nav-header button:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* ===================================================
+                MOBILE LINKS
+=================================================== */
+
+.mobile-nav-menu .navbar-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  gap: 8px;
+
+  padding: 20px;
+}
+
+.mobile-nav-menu .navbar-navigation-link {
+  width: 100%;
+  padding: 15px 18px;
+  font-size: 16px;
+}
+
+.mobile-nav-menu .navbar-navigation-icon {
+  font-size: 18px;
+}
+
+/* ===================================================
+                RESPONSIVE
+=================================================== */
+
+@media (max-width:1100px){
+
+  .navbar > .navbar-navigation{
+    display:none;
+  }
+
+  .navbar-mobile-button{
+    display:block;
+  }
+
+}
+
+@media (min-width:1101px){
+
+  .mobile-nav-menu,
+  .mobile-nav-overlay{
+    display:none;
+  }
+
+}

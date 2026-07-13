@@ -1,0 +1,541 @@
+
+/* ==========================================================
+                    OUR JOURNEY SECTION
+========================================================== */
+
+.journey-section{
+    width:90%;
+    max-width:1300px;
+    margin:100px auto;
+}
+
+/* =======================
+      Section Heading
+======================= */
+
+.journey-section .section-heading{
+    text-align:center;
+    max-width:850px;
+    margin:0 auto 70px;
+}
+
+.journey-section .section-heading span{
+    display:inline-block;
+    background:#eef4ff;
+    color:#2563eb;
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:600;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.journey-section .section-heading h2{
+    font-size:46px;
+    color:#111827;
+    margin-bottom:20px;
+    line-height:1.3;
+}
+
+.journey-section .section-heading h2 span{
+    background:none;
+    color:#2563eb;
+    padding:0;
+    font-size:inherit;
+}
+
+.journey-section .section-heading p{
+    color:#6b7280;
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* =======================
+      Story Section
+======================= */
+
+.journey-story{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:60px;
+    align-items:center;
+    margin-bottom:90px;
+}
+
+.journey-left h3{
+    font-size:34px;
+    color:#1f2937;
+    margin-bottom:25px;
+}
+
+.journey-left p{
+    color:#6b7280;
+    line-height:1.9;
+    margin-bottom:20px;
+    font-size:17px;
+}
+
+.journey-right{
+    text-align:center;
+}
+
+.journey-right img{
+    width:100%;
+    max-width:480px;
+    border-radius:25px;
+    transition:.4s;
+    box-shadow:0 25px 50px rgba(0,0,0,.12);
+}
+
+.journey-right img:hover{
+    transform:translateY(-8px) scale(1.02);
+}
+
+/* =======================
+      Timeline
+======================= */
+
+.journey-timeline{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-bottom:90px;
+}
+
+.timeline-card{
+    background:white;
+    border-radius:20px;
+    padding:35px 25px;
+    text-align:center;
+    border:1px solid #edf0f6;
+    transition:.35s;
+    position:relative;
+    overflow:hidden;
+}
+
+.timeline-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:#2563eb;
+
+    transform:scaleX(0);
+
+    transition:.35s;
+
+}
+
+.timeline-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+.timeline-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.12);
+
+}
+
+.timeline-card span{
+
+    display:inline-flex;
+
+    width:70px;
+
+    height:70px;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin-bottom:22px;
+
+}
+
+.timeline-card h4{
+
+    color:#1f2937;
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+}
+
+.timeline-card p{
+
+    color:#6b7280;
+
+    line-height:1.7;
+
+    font-size:15px;
+
+}
+
+/* =======================
+      Achievements
+======================= */
+
+.journey-achievements{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    margin-bottom:90px;
+
+}
+
+.achievement-card{
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    color:white;
+
+    border-radius:22px;
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.achievement-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.35);
+
+}
+
+.achievement-card h2{
+
+    font-size:42px;
+
+    margin-bottom:12px;
+
+    font-weight:700;
+
+}
+
+.achievement-card p{
+
+    font-size:17px;
+
+    opacity:.95;
+
+}
+
+/* =======================
+      Future Vision
+======================= */
+
+.future-vision{
+
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+
+    color:white;
+
+    padding:60px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 25px 50px rgba(15,23,42,.18);
+
+}
+
+.future-vision h3{
+
+    font-size:38px;
+
+    margin-bottom:25px;
+
+}
+
+.future-vision p{
+
+    max-width:900px;
+
+    margin:auto;
+
+    color:#d1d5db;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+/* =======================
+      Responsive
+======================= */
+
+@media(max-width:1100px){
+
+.journey-story{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.journey-timeline{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.journey-achievements{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.journey-section{
+
+width:94%;
+
+margin:70px auto;
+
+}
+
+.journey-section .section-heading h2{
+
+font-size:34px;
+
+}
+
+.journey-left h3{
+
+font-size:28px;
+
+}
+
+.future-vision{
+
+padding:40px 25px;
+
+}
+
+.future-vision h3{
+
+font-size:30px;
+
+}
+
+.future-vision p{
+
+font-size:16px;
+
+}
+
+.journey-timeline{
+
+grid-template-columns:1fr;
+
+}
+
+.journey-achievements{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.journey-section .section-heading h2{
+
+font-size:28px;
+
+}
+
+.timeline-card{
+
+padding:30px 20px;
+
+}
+
+.timeline-card span{
+
+width:60px;
+
+height:60px;
+
+font-size:16px;
+
+}
+
+.achievement-card h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* =====================================================
+                    CORE VALUES
+===================================================== */
+
+.core-values-section{
+
+    width:92%;
+    max-width:1400px;
+
+    margin:120px auto;
+
+}
+
+.values-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.value-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    border:1px solid #e5e7eb;
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.05);
+
+}
+
+.value-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 55px rgba(37,99,235,.15);
+
+    border-color:#2563eb;
+
+}
+
+.value-icon{
+
+    width:85px;
+
+    height:85px;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto auto 25px;
+
+    transition:.35s;
+
+}
+
+.value-card:hover .value-icon{
+
+    background:#2563eb;
+
+    color:white;
+
+    transform:rotate(12deg) scale(1.08);
+
+}
+
+.value-card h3{
+
+    font-size:24px;
+
+    color:#111827;
+
+    margin-bottom:15px;
+
+}
+
+.value-card p{
+
+    color:#6b7280;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+}
+
+/* Responsive */
+
+@media(max-width:1000px){
+
+.values-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:700px){
+
+.values-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}

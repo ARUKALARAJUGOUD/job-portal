@@ -1,0 +1,72 @@
+.career-objective-section {
+  margin-top: 30px;
+}
+
+.resume-section-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+}
+
+.resume-section-header {
+  margin-bottom: 25px;
+}
+
+.resume-section-header h2 {
+  font-size: 24px;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.resume-section-header p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.resume-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-form-group label {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #334155;
+}
+
+.resume-form-group label span {
+  color: #ef4444;
+}
+
+.resume-form-group textarea {
+  resize: vertical;
+  min-height: 160px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.resume-form-group textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.resume-form-group small {
+  margin-top: 8px;
+  color: #64748b;
+  align-self: flex-end;
+}
+
+@media (max-width: 768px) {
+  .resume-section-card {
+    padding: 20px;
+  }
+
+  .resume-section-header h2 {
+    font-size: 20px;
+  }
+}

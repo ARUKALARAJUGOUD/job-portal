@@ -1,0 +1,131 @@
+/* ==========================================
+   BASIC INFORMATION SECTION
+========================================== */
+
+.basic-information-section {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+    border: 1px solid #edf2f7;
+}
+
+/* ==========================================
+   SECTION TITLE
+========================================== */
+
+.basic-information-title {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.basic-information-subtitle {
+    color: #64748b;
+    font-size: .95rem;
+    margin-bottom: 30px;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.basic-information-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* ==========================================
+   INPUT GROUP
+========================================== */
+
+.basic-input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.basic-input-group label {
+    font-size: .92rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px;
+}
+
+.basic-input-group input,
+.basic-input-group select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #dbe4ee;
+    border-radius: 10px;
+    font-size: .95rem;
+    background: #ffffff;
+    transition: .3s;
+}
+
+/* ==========================================
+   PLACEHOLDER
+========================================== */
+
+.basic-input-group input::placeholder,
+.basic-input-group select {
+    color: #94a3b8;
+}
+
+/* ==========================================
+   FOCUS
+========================================== */
+
+.basic-input-group input:focus,
+.basic-input-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+}
+
+/* ==========================================
+   FULL WIDTH
+========================================== */
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:992px){
+
+.basic-information-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+@media (max-width:768px){
+
+.basic-information-section{
+    padding:25px;
+}
+
+.basic-information-title{
+    font-size:1.35rem;
+}
+
+}
+
+@media (max-width:480px){
+
+.basic-information-section{
+    padding:20px;
+}
+
+.basic-input-group input,
+.basic-input-group select{
+    padding:12px 15px;
+}
+
+}

@@ -1,0 +1,144 @@
+.job-filter-section{
+    width:100%;
+    padding:35px 20px;
+}
+
+.job-filter-container{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.job-filter-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:25px;
+
+}
+
+.job-filter-title svg{
+
+    color:#2563eb;
+
+    font-size:22px;
+
+}
+
+.job-filter-title h2{
+
+    font-size:24px;
+
+}
+
+.job-filter-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));
+    gap:20px;
+}
+
+.job-filter-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.job-filter-group label{
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+    color:#444;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.job-filter-group input,
+
+.job-filter-group select{
+
+    height:52px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    padding:0 16px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.job-filter-group input:focus,
+
+.job-filter-group select:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+.job-filter-footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:30px;
+
+}
+
+.job-filter-reset-btn{
+
+    background:#ef4444;
+
+    color:#fff;
+
+    border:none;
+
+    padding:14px 30px;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.job-filter-reset-btn:hover{
+
+    background:#dc2626;
+
+}

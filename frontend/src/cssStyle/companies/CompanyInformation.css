@@ -1,0 +1,193 @@
+/* ==========================================
+   COMPANY INFORMATION SECTION
+========================================== */
+
+.company-information-section{
+    background:#ffffff;
+    border-radius:18px;
+    padding:35px;
+    margin-bottom:35px;
+
+    border:1px solid #edf2f7;
+
+    box-shadow:0 8px 25px rgba(15,23,42,.06);
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.company-information-title{
+    font-size:1.55rem;
+    font-weight:700;
+    color:#1e293b;
+    margin-bottom:8px;
+}
+
+.company-information-subtitle{
+    color:#64748b;
+    margin-bottom:30px;
+    font-size:.95rem;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.company-information-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:24px;
+
+}
+
+/* ==========================================
+   INPUT GROUP
+========================================== */
+
+.company-input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.company-input-group label{
+
+    margin-bottom:8px;
+
+    font-size:.92rem;
+
+    font-weight:600;
+
+    color:#334155;
+
+}
+
+/* ==========================================
+   INPUT
+========================================== */
+
+.company-input-group input,
+.company-input-group textarea,
+.company-input-group select{
+
+    width:100%;
+
+    padding:14px 18px;
+
+    border:1px solid #dbe4ee;
+
+    border-radius:10px;
+
+    font-size:.95rem;
+
+    transition:.3s;
+
+    background:#fff;
+
+}
+
+/* ==========================================
+   TEXTAREA
+========================================== */
+
+.company-input-group textarea{
+
+    resize:vertical;
+
+    min-height:150px;
+
+    line-height:1.7;
+
+    font-family:inherit;
+
+}
+
+/* ==========================================
+   PLACEHOLDER
+========================================== */
+
+.company-input-group input::placeholder,
+.company-input-group textarea::placeholder{
+
+    color:#94a3b8;
+
+}
+
+/* ==========================================
+   FOCUS
+========================================== */
+
+.company-input-group input:focus,
+.company-input-group textarea:focus,
+.company-input-group select:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+/* ==========================================
+   FULL WIDTH
+========================================== */
+
+.full-width{
+
+    grid-column:1/-1;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.company-information-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.company-information-section{
+
+padding:25px;
+
+}
+
+.company-information-title{
+
+font-size:1.35rem;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.company-information-section{
+
+padding:20px;
+
+}
+
+.company-input-group input,
+.company-input-group textarea{
+
+padding:12px 15px;
+
+}
+
+}

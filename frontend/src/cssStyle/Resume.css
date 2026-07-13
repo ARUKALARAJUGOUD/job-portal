@@ -1,0 +1,513 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Manrope",sans-serif;
+}
+
+/* ===========================
+   Resume Page
+=========================== */
+
+.resume-view-page {
+  background: #f4f7fb;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.resume-view-card {
+  max-width: 1150px;
+  margin: auto;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.resume-view-header {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding: 45px;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: #fff;
+}
+
+.resume-view-profile-photo {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.resume-view-header-info {
+  flex: 1;
+}
+
+.resume-view-header-info h1 {
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+.resume-view-header-info h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  opacity: 0.95;
+}
+
+.resume-view-header-info p {
+  font-size: 17px;
+  opacity: 0.9;
+}
+
+/* ===========================
+   Contact
+=========================== */
+
+.resume-view-contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.resume-view-contact-grid span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-size: 15px;
+}
+
+/* ===========================
+   Sections
+=========================== */
+
+.resume-view-section {
+  padding: 35px 45px;
+  border-bottom: 1px solid #ececec;
+}
+
+.resume-view-section:last-child {
+  border: none;
+}
+
+.resume-view-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1e3a8a;
+  font-size: 24px;
+  margin-bottom: 28px;
+  font-weight: 700;
+}
+
+.resume-view-section > p {
+  line-height: 1.8;
+  color: #555;
+  font-size: 16px;
+}
+
+/* ===========================
+   Professional Cards
+=========================== */
+
+.resume-view-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.resume-view-info-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 28px;
+  text-align: center;
+  transition: .3s;
+}
+
+.resume-view-info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(37,99,235,.12);
+}
+
+.resume-view-info-card svg {
+  font-size: 28px;
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.resume-view-info-card h4 {
+  margin-bottom: 10px;
+  color: #334155;
+}
+
+.resume-view-info-card p {
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* ===========================
+   Skills
+=========================== */
+
+.resume-view-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.resume-view-skills span {
+  background: #2563eb;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.resume-view-skills span:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+}
+
+/* ===========================
+   Resume Item
+=========================== */
+
+.resume-view-item {
+  position: relative;
+  padding: 25px 30px;
+  margin-bottom: 22px;
+  border-left: 4px solid #2563eb;
+  background: #fafafa;
+  border-radius: 10px;
+}
+
+.resume-view-item:last-child {
+  margin-bottom: 0;
+}
+
+.resume-view-item h3 {
+  color: #1e293b;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.resume-view-item h4 {
+  color: #2563eb;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.resume-view-item p {
+  margin: 8px 0;
+  color: #555;
+  line-height: 1.7;
+}
+
+.resume-view-item span {
+  display: block;
+  margin-bottom: 15px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* ===========================
+   Technology
+=========================== */
+
+.resume-view-technology {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.resume-view-technology span {
+  margin: 0;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ===========================
+   Links
+=========================== */
+
+.resume-view-links {
+  display: flex;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.resume-view-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  background: #2563eb;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: .3s;
+  font-weight: 600;
+}
+
+.resume-view-links a:hover {
+  background: #1d4ed8;
+}
+
+
+/* ==========================================
+   Resume Action Buttons
+========================================== */
+
+.resume-view-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.resume-view-download-btn,
+.resume-view-build-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 28px;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  text-decoration: none;
+}
+
+/* Download Button */
+
+.resume-view-download-btn {
+  background: #16a34a;
+  color: white;
+  border: none;
+}
+
+.resume-view-download-btn:hover {
+  background: #15803d;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(22, 163, 74, 0.25);
+}
+
+/* Build Resume Button */
+
+.resume-view-build-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+}
+
+.resume-view-build-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+}
+
+.resume-view-build-btn:active,
+.resume-view-download-btn:active {
+  transform: scale(0.98);
+}
+
+
+
+
+
+
+
+
+/* Empty State */
+
+.resume-view-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 45px 25px;
+  margin-top: 15px;
+
+  border: 2px dashed #d6dbe6;
+  border-radius: 14px;
+
+  background: linear-gradient(180deg, #fafcff, #f3f7fc);
+
+  text-align: center;
+}
+
+.resume-view-empty-icon {
+  font-size: 42px;
+  color: #94a3b8;
+  margin-bottom: 18px;
+}
+
+.resume-view-empty-state h3 {
+  font-size: 20px;
+  color: #1e293b;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.resume-view-empty-state p {
+  max-width: 420px;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .resume-view-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .resume-view-download-btn,
+  .resume-view-build-btn {
+    width: 100%;
+  }
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width:900px){
+
+.resume-view-header{
+    flex-direction:column;
+    text-align:center;
+}
+
+.resume-view-contact-grid{
+    justify-content:center;
+}
+
+.resume-view-profile-photo{
+    width:150px;
+    height:150px;
+}
+
+.resume-view-header-info h1{
+    font-size:30px;
+}
+
+.resume-view-section{
+    padding:30px;
+}
+
+.resume-view-links{
+    flex-direction:column;
+}
+
+.resume-view-links a{
+    justify-content:center;
+}
+
+}
+
+@media (max-width:600px){
+
+.resume-view-page{
+    padding:15px;
+}
+
+.resume-view-card{
+    border-radius:12px;
+}
+
+.resume-view-header{
+    padding:30px 20px;
+}
+
+.resume-view-profile-photo{
+    width:120px;
+    height:120px;
+}
+
+.resume-view-header-info h1{
+    font-size:26px;
+}
+
+.resume-view-header-info h3{
+    font-size:18px;
+}
+
+.resume-view-contact-grid{
+    flex-direction:column;
+    gap:10px;
+}
+
+.resume-view-section{
+    padding:22px;
+}
+
+.resume-view-section h2{
+    font-size:21px;
+}
+
+.resume-view-info-grid{
+    grid-template-columns:1fr;
+}
+
+.resume-view-item{
+    padding:20px;
+}
+
+.resume-view-item h3{
+    font-size:19px;
+}
+
+.resume-view-item h4{
+    font-size:16px;
+}
+
+.resume-view-skills span,
+.resume-view-technology span{
+    font-size:12px;
+}
+
+}

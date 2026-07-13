@@ -1,0 +1,312 @@
+/* ===========================================
+   PAGE
+=========================================== */
+
+.create-company-page {
+    min-height: 100vh;
+    background: #f5f7fb;
+    padding: 50px 20px;
+}
+
+.create-company-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ===========================================
+   HEADER
+=========================================== */
+
+.create-company-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.create-company-header h1 {
+    font-size: 2.3rem;
+    color: #1e293b;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.create-company-header p {
+    color: #64748b;
+    font-size: 1rem;
+}
+
+/* ===========================================
+   FORM
+=========================================== */
+
+.create-company-form {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow:
+        0 15px 40px rgba(15, 23, 42, 0.08),
+        0 4px 10px rgba(15, 23, 42, 0.04);
+
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* ===========================================
+   COMMON SECTION
+=========================================== */
+
+.company-section {
+    border-bottom: 1px solid #edf2f7;
+    padding-bottom: 30px;
+}
+
+.company-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.section-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 25px;
+}
+
+/* ===========================================
+   GRID
+=========================================== */
+
+.company-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* ===========================================
+   INPUT GROUP
+=========================================== */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: .92rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    font-size: .96rem;
+    transition: .3s;
+    background: white;
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.7;
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+}
+
+/* ===========================================
+   PLACEHOLDER
+=========================================== */
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* ===========================================
+   LOGO SECTION
+=========================================== */
+
+.company-logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.company-logo-preview {
+    width: 170px;
+    height: 170px;
+    border-radius: 18px;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+.logo-upload-btn {
+    margin-top: 18px;
+    background: #2563eb;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: .3s;
+    font-weight: 600;
+}
+
+.logo-upload-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.logo-upload-btn input {
+    display: none;
+}
+
+.logo-note {
+    margin-top: 12px;
+    color: #64748b;
+    font-size: .9rem;
+}
+
+/* ===========================================
+   SOCIAL INPUTS
+=========================================== */
+
+.social-input {
+    position: relative;
+}
+
+.social-input svg {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+}
+
+.social-input input {
+    padding-left: 48px;
+}
+
+/* ===========================================
+   BUTTONS
+=========================================== */
+
+.company-action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.cancel-btn,
+.save-btn {
+    border: none;
+    padding: 14px 34px;
+    border-radius: 10px;
+    font-size: .95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.cancel-btn {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+.cancel-btn:hover {
+    background: #cbd5e1;
+}
+
+.save-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.save-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.save-btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+
+@media (max-width:992px){
+
+.company-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+@media (max-width:768px){
+
+.create-company-form{
+    padding:25px;
+}
+
+.company-logo-preview{
+    width:140px;
+    height:140px;
+}
+
+.company-action-buttons{
+    flex-direction:column;
+}
+
+.cancel-btn,
+.save-btn{
+    width:100%;
+}
+
+}
+
+@media (max-width:480px){
+
+.create-company-page{
+    padding:20px 12px;
+}
+
+.create-company-header h1{
+    font-size:1.8rem;
+}
+
+.section-title{
+    font-size:1.2rem;
+}
+
+.company-logo-preview{
+    width:120px;
+    height:120px;
+}
+
+.logo-upload-btn{
+    width:100%;
+    justify-content:center;
+}
+
+}

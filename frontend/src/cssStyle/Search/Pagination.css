@@ -1,0 +1,87 @@
+.job-pagination{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin:50px 0;
+
+    flex-wrap:wrap;
+
+}
+
+.job-pagination-btn{
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.job-pagination-btn:hover:not(:disabled){
+
+    background:#1d4ed8;
+
+}
+
+.job-pagination-btn:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+}
+
+.job-pagination-number{
+
+    width:45px;
+
+    height:45px;
+
+    border:1px solid #ddd;
+
+    background:#fff;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.job-pagination-number:hover{
+
+    border-color:#2563eb;
+
+    color:#2563eb;
+
+}
+
+.job-pagination-number.active{
+
+    background:#2563eb;
+
+    color:#fff;
+
+    border-color:#2563eb;
+
+}

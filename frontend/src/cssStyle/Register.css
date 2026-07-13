@@ -1,0 +1,276 @@
+/* ==========================================================
+                    REGISTER PAGE
+========================================================== */
+
+.register-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f9ff, #eef5ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.register-container {
+  width: 1200px;
+  max-width: 100%;
+  min-height: 760px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  background: #ffffff;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+}
+
+/* ==========================================
+                LEFT SIDE
+========================================== */
+
+.register-left {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  padding: 70px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-left::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: rgba(255,255,255,.08);
+  border-radius: 50%;
+  top: -120px;
+  left: -100px;
+}
+
+.register-left::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: rgba(255,255,255,.08);
+  border-radius: 50%;
+  bottom: -70px;
+  right: -80px;
+}
+
+.register-left h1 {
+  font-size: 46px;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.register-left p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.9);
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================
+                RIGHT SIDE
+========================================== */
+
+.register-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 45px;
+  background: #fff;
+}
+
+.register-form {
+  width: 100%;
+  max-width: 520px;
+}
+
+.register-form h2 {
+  font-size: 34px;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.register-form>p {
+  color: #6b7280;
+  margin-bottom: 35px;
+}
+
+/* ==========================================
+                FORM GROUP
+========================================== */
+
+.register-group {
+  margin-bottom: 22px;
+  position: relative;
+}
+
+.register-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.register-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: .3s;
+  outline: none;
+  background: #fff;
+}
+
+.register-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+}
+
+/* ==========================================
+          PASSWORD SHOW/HIDE
+========================================== */
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 42px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.password-toggle:hover {
+  color: #1d4ed8;
+}
+
+/* ==========================================
+            ROLE SELECTION
+========================================== */
+
+.register-role {
+  display: flex;
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.register-role label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 15px;
+  cursor: pointer;
+  transition: .3s;
+  font-weight: 600;
+  color: #374151;
+}
+
+.register-role label:hover {
+  border-color: #2563eb;
+  background: #f4f8ff;
+}
+
+.register-role input[type="radio"] {
+  accent-color: #2563eb;
+  transform: scale(1.2);
+}
+
+/* ==========================================
+            BUTTON
+========================================== */
+
+.register-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg,#2563eb,#1d4ed8);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .35s;
+}
+
+.register-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(37,99,235,.28);
+}
+
+.register-btn:disabled {
+  opacity: .7;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+            LOGIN LINK
+========================================== */
+
+.register-login {
+  margin-top: 25px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.register-login a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-login a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+@media (max-width: 992px) {
+
+  .register-container {
+    grid-template-columns: 1fr;
+  }
+
+  .register-left {
+    display: none;
+  }
+
+  .register-right {
+    padding: 35px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .register-page {
+    padding: 20px;
+  }
+
+  .register-right {
+    padding: 25px;
+  }
+
+  .register-form h2 {
+    font-size: 28px;
+  }
+
+  .register-role {
+    flex-direction: column;
+  }
+
+}
