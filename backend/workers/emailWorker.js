@@ -5,8 +5,8 @@ import { Worker } from "bullmq";
 import { connection } from "../config/redis.js";
 import { sendMail } from "../utils/sendWelcomeEmail.js";
 
-console.log("EMAIL =", process.env.EMAIL);
-console.log("PASSWORD EXISTS =", !!process.env.EMAIL_PASSWORD);
+// console.log("EMAIL =", process.env.EMAIL);
+// console.log("PASSWORD EXISTS =", !!process.env.EMAIL_PASSWORD);
 
 new Worker(
   "emailLoginQueue",
