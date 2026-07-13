@@ -26,16 +26,29 @@ const app = express();
 const secret = crypto.randomBytes(64).toString("hex");
 console.log(secret);
 
+
+console.log("CLIENT_URL:", process.env.CLIENT_URL);
+console.log("NODE_ENV:", process.env.NODE_ENV);
 //used in the cors
 const corsData = {
-  origin: ["http://localhost:5173",
-    process.env.CLIENT_URL,
-  ],
+  origin: ["http://localhost:5173", process.env.CLIENT_URL],
   credentials: true,
 };
 
 // connecting the frontend and backend using cors
-app.use(cors(corsData));
+// app.use(cors(corsData));
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error(`Origin ${origin} not allowed by CORS`));
+      }
+    },
+    credentials: true,
+  }),
+);
 
 //used for the brute-force attack  and api abuse
 const limiter = rateLimit({
@@ -63,7 +76,12 @@ app.use(cookieParser());
 // app.use(mongoSanitize());
 
 // used to prevent the attackers from the xss attackers , information leakage , mime sniffing ,click jacking
-app.use(helmet());
+// app.use(helmet());
+app.use(
+  helmet({
+    crossOriginResourcePolicy: false,
+  })
+);
 
 // api's
 // user
@@ -88,7 +106,7 @@ app.use("/api/v1/application", applicationRoutes);
 app.use("/api/v1/skills", skillsRoutes);
 
 //server is started
- DataBase();
+DataBase();
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
