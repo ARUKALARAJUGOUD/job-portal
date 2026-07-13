@@ -21,6 +21,7 @@ import resumeRoutes from "./routes/resume.route.js";
 import savedJobRoutes from "./routes/savedJob.route.js";
 import skillsRoutes from "./routes/skills.route.js";
 import userRoutes from "./routes/user.route.js";
+import "./workers/index.js";
 const app = express();
 
 const secret = crypto.randomBytes(64).toString("hex");
