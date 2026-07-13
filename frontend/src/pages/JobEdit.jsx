@@ -16,7 +16,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "../cssStyle/CreateJob.css";
-import API from "../services/Api";
+import API from "../services/api";
 
 const JobEdit = () => {
   const { id } = useParams();
