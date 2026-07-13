@@ -26,13 +26,12 @@ const app = express();
 const secret = crypto.randomBytes(64).toString("hex");
 console.log(secret);
 
-
 console.log("CLIENT_URL:", process.env.CLIENT_URL);
 console.log("NODE_ENV:", process.env.NODE_ENV);
 //used in the cors
 const corsData = {
-  origin: ["http://localhost:5173", process.env.CLIENT_URL],
-  credentials: true,
+  origin: ["http://localhost:5173", "https://nextcareerstep.vercel.app"],
+  // credentials: true,
 };
 
 // connecting the frontend and backend using cors
@@ -80,7 +79,7 @@ app.use(cookieParser());
 app.use(
   helmet({
     crossOriginResourcePolicy: false,
-  })
+  }),
 );
 
 // api's
