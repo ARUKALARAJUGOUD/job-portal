@@ -29,20 +29,18 @@ console.log(secret);
 console.log("CLIENT_URL:", process.env.CLIENT_URL);
 console.log("NODE_ENV:", process.env.NODE_ENV);
 //used in the cors
-const allowedOrigins = {
-  origin: ["http://localhost:5173", "https://nextcareerstep.vercel.app"],
-  // credentials: true,
-};
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://nextcareerstep.vercel.app",
+];
 
-// connecting the frontend and backend using cors
-// app.use(cors(corsData));
-app.use( 
+app.use(
   cors({
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
-        callback(new Error(`Origin ${origin} not allowed by CORS`));
+        callback(new Error("Not allowed by CORS"));
       }
     },
     credentials: true,
