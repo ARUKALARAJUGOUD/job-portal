@@ -87,8 +87,8 @@ app.use("/api/v1/skills", skillsRoutes);
 
 //server is started
  DataBase();
-app.listen(process.env.PORT, () => {
- 
+const PORT = process.env.PORT || 5000;
 
-  console.log("server is running at the 5000 port ");
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
