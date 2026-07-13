@@ -28,7 +28,9 @@ console.log(secret);
 
 //used in the cors
 const corsData = {
-  origin: ["http://localhost:5173"],
+  origin: ["http://localhost:5173",
+    process.env.CLIENT_URL,
+  ],
   credentials: true,
 };
 
