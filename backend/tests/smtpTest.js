@@ -14,7 +14,7 @@ console.log("Checking SMTP Connection...");
 
 const socket = net.createConnection({
   host: "smtp.gmail.com",
-  port: 465,
+  port: 587,
 });
 
 socket.setTimeout(10000);
