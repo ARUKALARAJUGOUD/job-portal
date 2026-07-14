@@ -12,17 +12,28 @@ export const sendMail = async (email, subject, html) => {
     //   },
     // });
 
+    // const transporter = nodemailer.createTransport({
+    //   host: "smtp.gmail.com",
+    //   port: 465,
+    //   secure: true,
+    //   auth: {
+    //     user: process.env.EMAIL,
+    //     pass: process.env.EMAIL_PASSWORD,
+    //   },
+    //   connectionTimeout: 30000,
+    //   greetingTimeout: 30000,
+    //   socketTimeout: 30000,
+    // });
+
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
+      port: 587,
+      secure: false,
+      requireTLS: true,
       auth: {
         user: process.env.EMAIL,
         pass: process.env.EMAIL_PASSWORD,
       },
-      connectionTimeout: 30000,
-      greetingTimeout: 30000,
-      socketTimeout: 30000,
     });
 
     console.log("Verifying SMTP...");
@@ -41,7 +52,8 @@ export const sendMail = async (email, subject, html) => {
     console.log("MAIL SENT");
     console.log(info);
   } catch (err) {
-    console.log("SEND MAIL ERROR");
+    console.error("SEND MAIL ERROR");
     console.error(err);
+    throw err;
   }
 };
