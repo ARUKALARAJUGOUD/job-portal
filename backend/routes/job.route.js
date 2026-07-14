@@ -7,7 +7,7 @@ router.post("/create", isAuthenticated, createJob);
 router.put("/update/:jobId",isAuthenticated,updateJob);
 router.delete("/delete/:id",isAuthenticated,deleteJobById);
 router.get("/recruiter-jobs",isAuthenticated,getJobsByRecruiterId);
-router.get("/getJobs",getJobs);
+router.get("/getJobs",getJobs); 
 router.get("/get-job/:id",getJobById)
 router.get("/search",searchJobs)
 export default router;
