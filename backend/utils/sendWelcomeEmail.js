@@ -52,7 +52,7 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASSWORD,
   },
 });
-
+  
 export const sendMail = async (email, subject, html) => {
   try {
     const info = await transporter.sendMail({
