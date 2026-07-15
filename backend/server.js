@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 //used to access the .env files
 dotenv.config();
-import "./tests/nodemailerTest.js";
+// import "./tests/nodemailerTest.js";
 import compression from "compression";
 import cookieParser from "cookie-parser";
 import cors from "cors";
