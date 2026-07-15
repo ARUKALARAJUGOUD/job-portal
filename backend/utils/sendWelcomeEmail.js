@@ -38,9 +38,6 @@
 //   }
 // };
 
-
-
-
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
@@ -52,11 +49,12 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASSWORD,
   },
 });
-  
+
 export const sendMail = async (email, subject, html) => {
   try {
     const info = await transporter.sendMail({
-      from: `"Next Career Step" <${process.env.EMAIL}>`,
+      // from: '"Next Career Step" <no-reply@nextcareerstep.com>',
+      from: process.env.EMAIL,
       to: email,
       subject,
       html,
