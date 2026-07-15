@@ -1,64 +1,60 @@
-// import dns from "dns/promises";
-// import nodemailer from "nodemailer";
+export const sendMail = async (email, subject, html) => {
+  try {
+    // // Force IPv4
+    // const { address } = await dns.lookup("smtp.gmail.com", {
+    //   family: 4,
+    // });
 
-// export const sendMail = async (email, subject, html) => {
-//   try {
-//     // Force IPv4
-//     const { address } = await dns.lookup("smtp.gmail.com", {
-//       family: 4,
-//     });
+    // console.log("Using Gmail IPv4:", address);
 
-//     console.log("Using Gmail IPv4:", address);
+    // const transporter = nodemailer.createTransport({
+    //   host: address,
+    //   port: 465,
+    //   secure: true,
 
-//     const transporter = nodemailer.createTransport({
-//       host: address,
-//       port: 465,
-//       secure: true,
+    //   auth: {
+    //     user: process.env.EMAIL,
+    //     pass: process.env.EMAIL_PASSWORD,
+    //   },
 
-//       auth: {
-//         user: process.env.EMAIL,
-//         pass: process.env.EMAIL_PASSWORD,
-//       },
+    //   tls: {
+    //     servername: "smtp.gmail.com",
+    //   },
+    // });
 
-//       tls: {
-//         servername: "smtp.gmail.com",
-//       },
-//     });
+    import dns from "dns/promises";
+    import nodemailer from "nodemailer";
 
-//     const info = await transporter.sendMail({
-//       from: process.env.EMAIL,
-//       to: email,
-//       subject,
-//       html,
-//     });
+    const { address } = await dns.lookup("smtp-relay.brevo.com", {
+      family: 4,
+    });
 
-//     console.log("Email sent:", info.response);
-//   } catch (err) {
-//     console.error("EMAIL ERROR:", err);
-//   }
-// };
+    console.log("Brevo IPv4:", address);
 
+    const transporter = nodemailer.createTransport({
+      host: address,
+      port: 587,
+      secure: false,
 
-import dns from "dns/promises";
-import nodemailer from "nodemailer";
+      auth: {
+        user: process.env.EMAIL,
+        pass: process.env.EMAIL_PASSWORD,
+      },
 
-const { address } = await dns.lookup("smtp-relay.brevo.com", {
-  family: 4,
-});
+      tls: {
+        servername: "smtp-relay.brevo.com",
+      },
+    });
 
-console.log("Brevo IPv4:", address);
+    const info = await transporter.sendMail({
+      from: process.env.EMAIL,
+      to: email,
+      subject,
+      html,
+    });
 
-const transporter = nodemailer.createTransport({
-  host: address,
-  port: 587,
-  secure: false,
-
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-
-  tls: {
-    servername: "smtp-relay.brevo.com",
-  },
-});
+    console.log("Email sent:", info.response);
+  } catch (err) {
+    console.error("EMAIL ERROR:", err);
+  }
+};
