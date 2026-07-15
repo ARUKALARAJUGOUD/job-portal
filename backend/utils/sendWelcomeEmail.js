@@ -1,3 +1,7 @@
+   import dns from "dns/promises";
+    import nodemailer from "nodemailer";
+
+
 export const sendMail = async (email, subject, html) => {
   try {
     // // Force IPv4
@@ -22,8 +26,7 @@ export const sendMail = async (email, subject, html) => {
     //   },
     // });
 
-    import dns from "dns/promises";
-    import nodemailer from "nodemailer";
+ 
 
     const { address } = await dns.lookup("smtp-relay.brevo.com", {
       family: 4,
