@@ -38,31 +38,26 @@
 //   }
 // };
 
+import dns from "dns/promises";
 import nodemailer from "nodemailer";
 
+const { address } = await dns.lookup("smtp-relay.brevo.com", {
+  family: 4,
+});
+
+console.log("Brevo IPv4:", address);
+
 const transporter = nodemailer.createTransport({
-  host: "smtp-relay.brevo.com",
+  host: address,
   port: 587,
   secure: false,
+
   auth: {
     user: process.env.EMAIL,
     pass: process.env.EMAIL_PASSWORD,
   },
+
+  tls: {
+    servername: "smtp-relay.brevo.com",
+  },
 });
-
-export const sendMail = async (email, subject, html) => {
-  try {
-    const info = await transporter.sendMail({
-      // from: '"Next Career Step" <no-reply@nextcareerstep.com>',
-      from: process.env.EMAIL,
-      to: email,
-      subject,
-      html,
-    }); 
-
-    console.log("Mail Sent:", info.messageId);
-  } catch (err) {
-    console.error("MAIL ERROR:", err);
-    throw err;
-  }
-};
