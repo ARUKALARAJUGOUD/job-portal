@@ -10,7 +10,7 @@ const Logo = () => {
       </div>
 
       <div className="navbar-logo-text">
-        <h2>JobPortal</h2>
+        <h2>JobSphere</h2>
         <span>Find Your Dream Career</span>
       </div>
 

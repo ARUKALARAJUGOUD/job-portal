@@ -7,7 +7,7 @@ import {
   FaMapMarkerAlt,
   FaMoneyBillWave,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../cssStyle/AppliedJobs.css";
 import API from "../services/api";
 
@@ -15,6 +15,7 @@ const AppliedJobs = () => {
   const [applications, setApplications] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const navigate = useNavigate();
   useEffect(() => {
     const getAppliedJobs = async () => {
       try {
@@ -122,7 +123,7 @@ const AppliedJobs = () => {
 
                 <div className="action-buttons">
                   <a
-                    href={application.candidate.resumeUrl.url}
+                    href={application?.candidate?.resumeUrl?.url}
                     target="_blank"
                     rel="noreferrer"
                     className="resume-btn"
@@ -137,6 +138,18 @@ const AppliedJobs = () => {
                     View Details
                     <FaArrowRight />
                   </Link>
+                  <button
+                    onClick={() => {
+                      navigate("/chat", {
+                        state: {
+                          receiverId: application.job.recruiter,
+                          fullName: application?.job?.recruiter.fullName,
+                        },
+                      });
+                    }}
+                  >
+                    message
+                  </button>
                 </div>
               </div>
             </div>

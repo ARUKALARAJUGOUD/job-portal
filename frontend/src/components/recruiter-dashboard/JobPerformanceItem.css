@@ -1,0 +1,181 @@
+/* ==========================================
+   Job Performance Card
+========================================== */
+
+.job-performance-item-container {
+  background: var(--surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: var(--radius-lg);
+
+  padding: 24px;
+
+  transition: all 0.3s ease;
+}
+
+.job-performance-item-container:hover {
+  transform: translateY(-4px);
+
+  box-shadow: var(--shadow-md);
+
+  border-color: var(--primary-color);
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+.job-performance-item-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+}
+
+/* ==========================================
+   Job Info
+========================================== */
+
+.job-performance-item-job-info {
+  flex: 1;
+}
+
+.job-performance-item-title {
+  font-size: 20px;
+
+  font-weight: 600;
+
+  color: var(--text-primary);
+
+  margin-bottom: 6px;
+}
+
+.job-performance-item-location {
+  font-size: 14px;
+
+  color: var(--text-secondary);
+}
+
+/* ==========================================
+   Status Badge
+========================================== */
+
+.job-performance-item-status {
+  padding: 8px 18px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-transform: capitalize;
+}
+
+.job-performance-item-status.active {
+  background: #dcfce7;
+
+  color: #15803d;
+}
+
+.job-performance-item-status.closed {
+  background: #f3f4f6;
+
+  color: #4b5563;
+}
+
+.job-performance-item-status.expired {
+  background: #fee2e2;
+
+  color: #dc2626;
+}
+
+/* ==========================================
+   Statistics Grid
+========================================== */
+
+.job-performance-item-stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+/* ==========================================
+   Individual Stat Card
+========================================== */
+
+.job-performance-item-stat-card {
+  background: #f8fafc;
+
+  border-radius: var(--radius-md);
+
+  padding: 18px;
+
+  text-align: center;
+
+  transition: all 0.3s ease;
+}
+
+.job-performance-item-stat-card:hover {
+  background: #eef4ff;
+
+  transform: translateY(-2px);
+}
+
+.job-performance-item-stat-label {
+  font-size: 13px;
+
+  color: var(--text-secondary);
+
+  margin-bottom: 10px;
+}
+
+.job-performance-item-stat-value {
+  font-size: 28px;
+
+  font-weight: 700;
+
+  color: var(--text-primary);
+}
+
+/* ==========================================
+   Tablet
+========================================== */
+
+@media (max-width: 992px) {
+  .job-performance-item-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media (max-width: 576px) {
+  .job-performance-item-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .job-performance-item-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .job-performance-item-title {
+    font-size: 18px;
+  }
+
+  .job-performance-item-stat-value {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,126 @@
+/* ==========================================
+   Empty State Container
+========================================== */
+
+.empty-state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 60px 30px;
+
+  background: var(--surface);
+
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+
+  transition: all 0.3s ease;
+}
+
+.empty-state-container:hover {
+  border-color: var(--primary-color);
+
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================
+   Icon Wrapper
+========================================== */
+
+.empty-state-icon-wrapper {
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eef4ff;
+
+  border-radius: 50%;
+
+  margin-bottom: 24px;
+}
+
+/* ==========================================
+   Icon
+========================================== */
+
+.empty-state-icon {
+  color: var(--primary-color);
+}
+
+/* ==========================================
+   Title
+========================================== */
+
+.empty-state-title {
+  font-size: 22px;
+  font-weight: 600;
+
+  color: var(--text-primary);
+
+  margin-bottom: 10px;
+}
+
+/* ==========================================
+   Description
+========================================== */
+
+.empty-state-description {
+  max-width: 380px;
+
+  font-size: 15px;
+  line-height: 1.6;
+
+  color: var(--text-secondary);
+}
+
+/* ==========================================
+   Tablet
+========================================== */
+
+@media (max-width: 768px) {
+  .empty-state-container {
+    padding: 50px 20px;
+  }
+
+  .empty-state-icon-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .empty-state-title {
+    font-size: 20px;
+  }
+
+  .empty-state-description {
+    font-size: 14px;
+  }
+}
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media (max-width: 480px) {
+  .empty-state-container {
+    padding: 40px 16px;
+  }
+
+  .empty-state-icon-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+
+  .empty-state-title {
+    font-size: 18px;
+  }
+
+  .empty-state-description {
+    font-size: 13px;
+  }
+}

@@ -9,7 +9,6 @@ const ApplicationsPage = () => {
 
   const [applications, setApplications] = useState([]);
 
-  
   const [loading, setLoading] = useState(true);
 
   const [showInterviewModal, setShowInterviewModal] = useState(false);
@@ -119,7 +118,7 @@ const ApplicationsPage = () => {
         <div className="application-card" key={application._id}>
           <div className="candidate-top">
             <img
-              src={application.candidate.profile.url}
+              src={application?.candidate?.profile.url}
               alt={application.candidate.fullName}
               className="candidate-image"
             />
@@ -158,7 +157,7 @@ const ApplicationsPage = () => {
             <div>
               <strong>Expected Salary</strong>
 
-              <p>₹{application.candidate.expectedSalary.toLocaleString()}</p>
+              <p>₹{application?.candidate?.expectedSalary?.toLocaleString()}</p>
             </div>
 
             <div>
@@ -191,7 +190,7 @@ const ApplicationsPage = () => {
 
           <div className="application-actions">
             <a
-              href={application.candidate.resumeUrl.url}
+              href={application?.candidate?.resumeUrl?.url}
               target="_blank"
               rel="noreferrer"
               className="resume-btn"
@@ -220,8 +219,6 @@ const ApplicationsPage = () => {
 
               <option value="Rejected">Rejected</option>
             </select>
-
-
           </div>
 
           {showInterviewModal && (

@@ -70,7 +70,7 @@ const Section1 = () => {
             </Link>
 
             <Link
-              to="/companies"
+              to="/get-companies"
               className="secondary-btn"
             >
               <FaBuilding />

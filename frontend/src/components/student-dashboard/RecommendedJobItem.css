@@ -1,0 +1,221 @@
+/* ==========================================
+   Recommended Job Item
+========================================== */
+
+.recommended-job-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+
+  padding: 24px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: var(--radius-md);
+
+  transition: all .3s ease;
+}
+
+.recommended-job-item-container:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--primary-color);
+
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================
+   Left Content
+========================================== */
+
+.recommended-job-item-content {
+  flex: 1;
+}
+
+.recommended-job-item-company {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.recommended-job-item-company-icon {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #eef4ff;
+
+  color: var(--primary-color);
+
+  flex-shrink: 0;
+}
+
+.recommended-job-item-company-name {
+  font-size: 18px;
+
+  font-weight: 600;
+
+  color: var(--text-primary);
+
+  margin-bottom: 5px;
+}
+
+.recommended-job-item-title {
+  font-size: 15px;
+
+  color: var(--text-secondary);
+}
+
+/* ==========================================
+   Meta
+========================================== */
+
+.recommended-job-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.recommended-job-item-meta-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 14px;
+
+  border-radius: var(--radius-md);
+
+  background: #f8fafc;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+.recommended-job-item-meta-card svg {
+  color: var(--primary-color);
+}
+
+.recommended-job-item-match {
+  background: #fff7ed;
+
+  color: #ea580c;
+
+  font-weight: 600;
+}
+
+.recommended-job-item-match svg {
+  color: #ea580c;
+}
+
+/* ==========================================
+   Button
+========================================== */
+
+.recommended-job-item-button {
+  padding: 12px 24px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--primary-color);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: .3s ease;
+
+  white-space: nowrap;
+}
+
+.recommended-job-item-button:hover {
+  background: var(--primary-hover);
+
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   Tablet
+========================================== */
+
+@media (max-width:768px){
+
+.recommended-job-item-container{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.recommended-job-item-button{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media (max-width:480px){
+
+.recommended-job-item-container{
+
+padding:18px;
+
+}
+
+.recommended-job-item-company{
+
+gap:12px;
+
+}
+
+.recommended-job-item-company-icon{
+
+width:48px;
+height:48px;
+
+}
+
+.recommended-job-item-company-name{
+
+font-size:16px;
+
+}
+
+.recommended-job-item-title{
+
+font-size:14px;
+
+}
+
+.recommended-job-item-meta{
+
+flex-direction:column;
+
+}
+
+.recommended-job-item-meta-card{
+
+width:100%;
+
+}
+}

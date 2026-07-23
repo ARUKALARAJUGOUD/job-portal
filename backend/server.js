@@ -14,6 +14,7 @@ import morgan from "morgan";
 import { DataBase } from "./config/DataBase.js";
 
 // Routes
+import http from "http";
 import applicationRoutes from "./routes/application.route.js";
 import companyRoutes from "./routes/company.route.js";
 import jobRoutes from "./routes/job.route.js";
@@ -21,17 +22,24 @@ import resumeRoutes from "./routes/resume.route.js";
 import savedJobRoutes from "./routes/savedJob.route.js";
 import skillsRoutes from "./routes/skills.route.js";
 import userRoutes from "./routes/user.route.js";
+import { initSocket } from "./socket.js";
+import dashboardRoutes from "./routes/dashboard.route.js"
 import "./workers/index.js";
-const app = express();
- 
-const secret = crypto.randomBytes(64).toString("hex");
-console.log(secret);
 
-console.log("CLIENT_URL:", process.env.CLIENT_URL);
-console.log("NODE_ENV:", process.env.NODE_ENV);
+import messageRoutes from "./routes/message.route.js";
+
+const app = express();
+//  created the server
+const server = http.createServer(app);
+
+const secret = crypto.randomBytes(64).toString("hex");
+// console.log(secret);
+
+// console.log("CLIENT_URL:", process.env.CLIENT_URL);
+// console.log("NODE_ENV:", process.env.NODE_ENV);
 //used in the cors
 const allowedOrigins = [
-  "http://localhost:5173",
+  // "http://localhost:5173",
   "https://nextcareerstep.vercel.app",
 ];
 
@@ -103,10 +111,18 @@ app.use("/api/v1/application", applicationRoutes);
 // skills
 app.use("/api/v1/skills", skillsRoutes);
 
+// messages 
+app.use("/api/v1/message", messageRoutes);
+
+// dashboards
+app.use("/api/v1/dashboard", dashboardRoutes);
+
+
+
 //server is started
 DataBase();
 const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
+initSocket(server);
+server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

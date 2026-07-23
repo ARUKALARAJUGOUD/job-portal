@@ -1,0 +1,181 @@
+/* ==========================================
+   Student Application Item
+========================================== */
+
+.student-application-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding: 22px 24px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+
+  transition: all 0.3s ease;
+}
+
+.student-application-item-container:hover {
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-md);
+
+  border-color: var(--primary-color);
+}
+
+/* ==========================================
+   Left Side
+========================================== */
+
+.student-application-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  flex: 1;
+}
+
+.student-application-item-company {
+  font-size: 18px;
+
+  font-weight: 600;
+
+  color: var(--text-primary);
+}
+
+.student-application-item-job-title {
+  font-size: 15px;
+
+  color: var(--text-secondary);
+}
+
+.student-application-item-date {
+  font-size: 13px;
+
+  color: var(--text-light);
+}
+
+/* ==========================================
+   Right Side
+========================================== */
+
+.student-application-item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+/* ==========================================
+   Status Badge
+========================================== */
+
+.student-application-item-status {
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-transform: capitalize;
+}
+
+.student-application-item-status-applied {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.student-application-item-status-interview {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.student-application-item-status-selected {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.student-application-item-status-rejected {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.student-application-item-status-default {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+/* ==========================================
+   View Button
+========================================== */
+
+.student-application-item-view-button {
+  color: var(--primary-color);
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.student-application-item-view-button:hover {
+  color: var(--primary-hover);
+
+  text-decoration: underline;
+}
+
+/* ==========================================
+   Tablet
+========================================== */
+
+@media (max-width: 768px) {
+  .student-application-item-container {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .student-application-item-actions {
+    width: 100%;
+
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    align-items: center;
+  }
+
+  .student-application-item-company {
+    font-size: 16px;
+  }
+
+  .student-application-item-job-title {
+    font-size: 14px;
+  }
+}
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media (max-width: 480px) {
+  .student-application-item-container {
+    padding: 18px;
+  }
+
+  .student-application-item-status {
+    padding: 6px 12px;
+
+    font-size: 12px;
+  }
+
+  .student-application-item-view-button {
+    font-size: 13px;
+  }
+}

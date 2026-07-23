@@ -10,6 +10,8 @@ import AppliedJobs from "./pages/AppliedJobs";
 import Companies from "./pages/Companies";
 import CompanyInfo from "./pages/CompanyInfo";
 // import ContactPage from "./pages/ContactPage";
+import { socket } from "../socketServices/socket";
+import ChatPage from "./pages/ChatPage";
 import CreateCompany from "./pages/CreateCompany";
 import CreateJob from "./pages/CreateJob";
 import EditCompany from "./pages/EditCompany";
@@ -24,20 +26,27 @@ import JobInfo from "./pages/JobInfo";
 import Jobs from "./pages/Jobs";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
+import RecentChats from "./pages/RecentChats";
 import RecruiterJobs from "./pages/RecruiterJobs";
 import Register from "./pages/Register";
 import ResetPassword from "./pages/ResetPassword";
 import Resume from "./pages/Resume";
 import SavedJobs from "./pages/SavedJobs";
+import SearchJobs from "./pages/SearchJobs";
 import VerifyOtp from "./pages/VerifyOtp";
 import ProtectedRoute from "./ProtectedRoutes/ProtectedRoute";
 import RoleProtectedRoute from "./ProtectedRoutes/RoleProtectedRoute";
 import API from "./services/api";
-import SearchJobs from "./pages/SearchJobs";
+import StudentDashboard from "./pages/StudentDashboard";
+import RecruiterDashboard from "./pages/RecruiterDashboard";
 
 function App() {
   const { setUser, setIsAuthenticated, setLoading, loading, user } = useAuth();
-
+console.log("App User:", user);
+  socket.on("connect", () => {
+    console.log("Connected");
+    console.log(socket.id);
+  });
   useEffect(() => {
     const loadUser = async () => {
       try {
@@ -69,6 +78,24 @@ function App() {
             <Route path="get-companies" element={<GetCompanies />} />
             {/* <Route path="/companies" element={<Companies />} /> */}
             <Route path="/about" element={<AboutPage />} />
+            <Route
+              path="/student-dashboard"
+              element={
+                <ProtectedRoute>
+                  <StudentDashboard user={user} />
+                </ProtectedRoute>
+              }
+            />
+
+
+             <Route
+              path="/recruiter-dashboard"
+              element={
+                <ProtectedRoute>
+                  <RecruiterDashboard user={user} />
+                </ProtectedRoute>
+              }
+            />
           </Route>
 
           {/* this layout is used for authentication no header and footer  */}
@@ -76,13 +103,33 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/verify-login-otp" element={<VerifyOtp />} />
-            <Route path="/search" element = {<SearchJobs />} />
+            <Route path="/search" element={<SearchJobs />} />
             {/* <Route path="/contact" element={<ContactPage />} /> */}
+
             <Route
               path="/profile"
               element={
                 <ProtectedRoute>
                   <Profile user={user} />
+                </ProtectedRoute>
+              }
+            />
+            
+           
+            <Route
+              path="/chat"
+              element={
+                <ProtectedRoute>
+                  <ChatPage user={user} />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/recent-chats"
+              element={
+                <ProtectedRoute>
+                  <RecentChats user={user} />
                 </ProtectedRoute>
               }
             />

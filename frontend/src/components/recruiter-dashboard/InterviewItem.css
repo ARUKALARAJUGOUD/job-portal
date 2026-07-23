@@ -1,0 +1,158 @@
+/* ===================================
+   Interview Item Container
+=================================== */
+
+.interview-item-container {
+  display: flex;
+  align-items: center;
+
+  padding: 22px 24px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+
+  transition: all 0.3s ease;
+}
+
+.interview-item-container:hover {
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-md);
+
+  border-color: var(--primary-color);
+}
+
+/* ===================================
+   Left Section
+=================================== */
+
+.interview-item-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  width: 100%;
+}
+
+.interview-item-avatar {
+  width: 60px;
+  height: 60px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 3px solid #eef4ff;
+
+  flex-shrink: 0;
+}
+
+.interview-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  flex: 1;
+}
+
+/* ===================================
+   Candidate Name
+=================================== */
+
+.interview-item-name {
+  font-size: 18px;
+  font-weight: 600;
+
+  color: var(--text-primary);
+}
+
+/* ===================================
+   Job Title
+=================================== */
+
+.interview-item-job-title {
+  font-size: 15px;
+
+  color: var(--text-secondary);
+}
+
+/* ===================================
+   Meta Information
+=================================== */
+
+.interview-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+
+  margin-top: 6px;
+}
+
+.interview-item-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--text-light);
+
+  font-size: 13px;
+}
+
+.interview-item-meta-item svg {
+  color: var(--primary-color);
+
+  flex-shrink: 0;
+}
+
+/* ===================================
+   Tablet
+=================================== */
+
+@media (max-width: 768px) {
+  .interview-item-container {
+    padding: 20px;
+  }
+
+  .interview-item-info {
+    align-items: flex-start;
+  }
+
+  .interview-item-name {
+    font-size: 16px;
+  }
+
+  .interview-item-job-title {
+    font-size: 14px;
+  }
+
+  .interview-item-meta {
+    gap: 12px;
+  }
+}
+
+/* ===================================
+   Mobile
+=================================== */
+
+@media (max-width: 480px) {
+  .interview-item-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .interview-item-avatar {
+    width: 52px;
+    height: 52px;
+  }
+
+  .interview-item-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .interview-item-meta-item {
+    font-size: 12px;
+  }
+}

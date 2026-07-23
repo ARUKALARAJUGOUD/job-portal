@@ -4,26 +4,7 @@
 // export const sendMail = async (email, subject, html) => {
 //   try {
 //     // // Force IPv4
-//     // const { address } = await dns.lookup("smtp.gmail.com", {
-//     //   family: 4,
-//     // });
-
-//     // console.log("Using Gmail IPv4:", address);
-
-//     // const transporter = nodemailer.createTransport({
-//     //   host: address,
-//     //   port: 465,
-//     //   secure: true,
-
-//     //   auth: {
-//     //     user: process.env.EMAIL,
-//     //     pass: process.env.EMAIL_PASSWORD,
-//     //   },
-
-//     //   tls: {
-//     //     servername: "smtp.gmail.com",
-//     //   },
-//     // });
+  
 
 //     console.log("EMAIL =", process.env.EMAIL);
 //     console.log("SMTP HOST = smtp-relay.brevo.com");
@@ -36,9 +17,10 @@
 
 //     console.log("Creating transporter...");
 //     const transporter = nodemailer.createTransport({
-//       host: address,
-//       port: 587,
-//       secure: false,
+//       // host: address,
+//       // port: 587,
+//       // secure: false,
+//       service:"gmail",
 //       auth: {
 //         user: process.env.EMAIL,
 //         pass: process.env.EMAIL_PASSWORD,
@@ -92,7 +74,7 @@ export const sendMail = async (email, subject, html) => {
 
     if (!response.ok) {
       console.log(data);
-      throw new Error(data.message);
+      throw new Error(data.message); 
     }
 
     console.log("✅ Email Sent");

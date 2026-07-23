@@ -1,0 +1,100 @@
+.dashboard{
+    display:flex;
+    min-height:100vh;
+    background:var(--background);
+    /* border: 2px solid red; */
+    /* min-width: 500px; */
+}
+
+/* Sidebar */
+
+.dashboard-sidebar{
+    width:270px;
+    flex-shrink:0;
+}
+
+/* Main */
+
+.dashboard-main{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:32px;
+
+    gap:28px;
+
+    overflow:auto;
+}
+
+/* Header */
+
+.dashboard-header{
+
+    background:var(--surface);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-sm);
+
+    padding:24px;
+}
+
+/* Stats */
+
+.dashboard-stats{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+/* Two Columns */
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        2fr
+        1fr;
+
+    gap:28px;
+}
+
+/* Bottom */
+
+.dashboard-bottom{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+
+@media(max-width:992px){
+
+.dashboard{
+
+    flex-direction:column;
+}
+
+.dashboard-sidebar{
+
+    width:100%;
+}
+
+.dashboard-main{
+
+    padding:20px;
+}
+
+.dashboard-grid{
+
+    grid-template-columns:1fr;
+}
+
+}

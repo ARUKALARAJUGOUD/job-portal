@@ -84,28 +84,41 @@ export const getUserApplication = async (req, res) => {
     }
 
     const cachedKey = `userApplications${id}`;
-    const cachedData = await connection.get(cachedKey);
-    if (cachedData) {
-      try {
-        return res.status(200).json({
-          success: true,
-          source: "redis",
-          applications: JSON.parse(cachedData),
-        });
-      } catch (error) {
-        await connection.del(cachedKey);
-      }
-    }
-    const applications = await Application.find({ candidate: id })
-      .populate("candidate")
-      .populate("resume")
-      .populate({
-        path: "job",
-        populate: {
-          path: "company",
-          select: "companyName logo location",
-        },
-      });
+  
+
+    // const cachedData = await connection.get(cachedKey);
+
+    // // console.log("Cached Data:", cachedData);
+
+    // // const cachedData = await connection.get(cachedKey);
+    // if (cachedData) {
+    //   try {
+    //     return res.status(200).json({
+    //       success: true,
+    //       source: "redis",
+    //       applications: JSON.parse(cachedData),
+    //     });
+    //   } catch (error) {
+    //     await connection.del(cachedKey);
+    //   }
+    // }
+   const applications = await Application.find({ candidate: id })
+  .populate("candidate")
+  .populate("resume")
+  .populate({
+    path: "job",
+    populate: [
+      {
+        path: "company",
+        select: "companyName logo location",
+      },
+      {
+        path: "recruiter",
+        select:
+          "fullName email phoneNumber profile currentPosition companyName headline location",
+      },
+    ],
+  });
     if (applications.length === 0) {
       return res.status(404).json({
         message: "Application not found ",
@@ -130,7 +143,6 @@ export const getUserApplication = async (req, res) => {
 
 // get the total  jobs Applications that are created by the recruiter (get the total applications on jobs that  are created by the recruiter )
 // used by the recruiter to know how many applications get from the created jobs
-
 
 // export const getRecruiterApplication = async (req, res) => {
 //   try {
@@ -185,12 +197,6 @@ export const getUserApplication = async (req, res) => {
 //   }
 // };
 
-
-
-
-
-
-
 export const getRecruiterApplication = async (req, res) => {
   try {
     const recruiterId = req.id;
@@ -224,6 +230,14 @@ export const getRecruiterApplication = async (req, res) => {
       {
         $match: {
           "job.recruiter": new mongoose.Types.ObjectId(recruiterId),
+        },
+      },
+
+      {
+        $match: {
+          candidate: {
+            $ne: new mongoose.Types.ObjectId(recruiterId),
+          },
         },
       },
 
@@ -319,12 +333,7 @@ export const getRecruiterApplication = async (req, res) => {
       },
     ]);
 
-    await connection.set(
-      cachedKey,
-      JSON.stringify(applications),
-      "EX",
-      3600
-    );
+    await connection.set(cachedKey, JSON.stringify(applications), "EX", 3600);
 
     return res.status(200).json({
       success: true,
@@ -339,13 +348,6 @@ export const getRecruiterApplication = async (req, res) => {
     });
   }
 };
-
-
-
-
-
-
-
 
 // get the applications of particular job  (when user click on particular job to view application on it )
 // used by the recruiter

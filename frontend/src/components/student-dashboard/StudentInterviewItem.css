@@ -1,0 +1,204 @@
+/* ==========================================
+   Student Interview Item
+========================================== */
+
+.student-interview-item-container {
+  padding: 24px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: var(--radius-md);
+
+  transition: all .3s ease;
+}
+
+.student-interview-item-container:hover {
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-md);
+
+  border-color: var(--primary-color);
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+.student-interview-item-header {
+  margin-bottom: 20px;
+}
+
+.student-interview-item-company {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+}
+
+.student-interview-item-company-icon {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #eef4ff;
+
+  color: var(--primary-color);
+
+  flex-shrink: 0;
+}
+
+.student-interview-item-company-name {
+  font-size: 18px;
+
+  font-weight: 600;
+
+  color: var(--text-primary);
+
+  margin-bottom: 6px;
+}
+
+.student-interview-item-job-title {
+  font-size: 15px;
+
+  color: var(--text-secondary);
+}
+
+/* ==========================================
+   Meta
+========================================== */
+
+.student-interview-item-meta {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 16px;
+}
+
+.student-interview-item-meta-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px;
+
+  background: #f8fafc;
+
+  border-radius: var(--radius-md);
+
+  transition: .3s;
+}
+
+.student-interview-item-meta-card:hover {
+  background: #eef4ff;
+}
+
+.student-interview-item-meta-card svg {
+  color: var(--primary-color);
+
+  flex-shrink: 0;
+}
+
+.student-interview-item-meta-card div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.student-interview-item-meta-card span {
+  font-size: 12px;
+
+  color: var(--text-light);
+}
+
+.student-interview-item-meta-card strong {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: var(--text-primary);
+}
+
+/* ==========================================
+   Tablet
+========================================== */
+
+@media (max-width: 768px) {
+
+.student-interview-item-meta{
+
+grid-template-columns:1fr;
+
+}
+
+.student-interview-item-company-name{
+
+font-size:16px;
+
+}
+
+.student-interview-item-job-title{
+
+font-size:14px;
+
+}
+
+}
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media (max-width:480px){
+
+.student-interview-item-container{
+
+padding:18px;
+
+}
+
+.student-interview-item-company{
+
+gap:12px;
+
+}
+
+.student-interview-item-company-icon{
+
+width:48px;
+height:48px;
+
+}
+
+.student-interview-item-company-name{
+
+font-size:15px;
+
+}
+
+.student-interview-item-job-title{
+
+font-size:13px;
+
+}
+
+.student-interview-item-meta-card{
+
+padding:12px;
+
+}
+}

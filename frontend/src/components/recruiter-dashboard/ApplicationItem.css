@@ -1,0 +1,220 @@
+/* ===========================
+   Application Item Container
+=========================== */
+
+.application-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+
+  padding: 22px 24px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+
+  transition: all 0.3s ease;
+}
+
+.application-item-container:hover {
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-md);
+
+  border-color: var(--primary-color);
+}
+
+/* ===========================
+   Left Side
+=========================== */
+
+.application-item-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  flex: 1;
+}
+
+.application-item-avatar {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 3px solid #eef4ff;
+
+  flex-shrink: 0;
+}
+
+.application-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.application-item-name {
+  font-size: 18px;
+  font-weight: 600;
+
+  color: var(--text-primary);
+}
+
+.application-item-job-title {
+  font-size: 15px;
+
+  color: var(--text-secondary);
+}
+
+.application-item-date {
+  font-size: 13px;
+
+  color: var(--text-light);
+}
+
+/* ===========================
+   Right Side
+=========================== */
+
+.application-item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+/* ===========================
+   Status Badge
+=========================== */
+
+.application-item-status {
+  padding: 7px 16px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-transform: capitalize;
+}
+
+/* Pending */
+
+.application-item-status.pending {
+  background: #fff7e6;
+  color: #d97706;
+}
+
+/* Accepted */
+
+.application-item-status.accepted {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+/* Rejected */
+
+.application-item-status.rejected {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Interview */
+
+.application-item-status.interview {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+/* Shortlisted */
+
+.application-item-status.shortlisted {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+/* In Review */
+
+.application-item-status.in-review {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+/* ===========================
+   View Button
+=========================== */
+
+.application-item-view-button {
+  color: var(--primary-color);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: color 0.3s ease;
+}
+
+.application-item-view-button:hover {
+  color: var(--primary-hover);
+
+  text-decoration: underline;
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media (max-width: 768px) {
+  .application-item-container {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 20px;
+  }
+
+  .application-item-actions {
+    width: 100%;
+
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    align-items: center;
+  }
+
+  .application-item-name {
+    font-size: 16px;
+  }
+
+  .application-item-job-title {
+    font-size: 14px;
+  }
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width: 480px) {
+  .application-item-info {
+    gap: 14px;
+  }
+
+  .application-item-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .application-item-status {
+    padding: 6px 12px;
+
+    font-size: 12px;
+  }
+
+  .application-item-view-button {
+    font-size: 13px;
+  }
+}

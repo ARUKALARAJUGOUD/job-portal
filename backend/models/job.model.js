@@ -83,4 +83,11 @@ const jobSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
+
+jobSchema.index({
+  recruiter: 1,
+  status: 1,
+});
+
+
 export const Job = mongoose.model("Job", jobSchema);

@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { FaEnvelope, FaFilePdf, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import "../cssStyle/JobApplications.css";
 import API from "../services/api";
 const JobApplications = () => {
   const [applications, setApplications] = useState([]);
 
+  const navigate = useNavigate();
   const [showInterviewModal, setShowInterviewModal] = useState(false);
 
   const [selectedApplication, setSelectedApplication] = useState(null);
@@ -149,7 +151,7 @@ const JobApplications = () => {
 
             <div>
               <strong>Expected Salary</strong>
-              <p>₹{applicant.candidate.expectedSalary.toLocaleString()}</p>
+              <p>₹{applicant?.candidate?.expectedSalary?.toLocaleString()}</p>
             </div>
 
             <div>
@@ -170,7 +172,7 @@ const JobApplications = () => {
             <p>{applicant.coverLetter}</p>
           </div>
 
-          <div className="candidate-buttons">
+          <div className="candidate-buttons action-buttons">
             <a
               href={applicant.candidate?.resumeUrl?.url}
               target="_blank"
@@ -181,6 +183,18 @@ const JobApplications = () => {
               Resume
             </a>
 
+            <button
+              onClick={() =>
+                navigate("/chat", {
+                  state: {
+                    receiverId: applicant.candidate._id,
+                    fullName: applicant?.candidate.fullName,
+                  },
+                })
+              }
+            >
+              message
+            </button>
             {/* <Link to={`/applications/${applicant._id}`} className="details-btn">
               View Details
             </Link> */}

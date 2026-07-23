@@ -1,11 +1,4 @@
-import {
-  FaBriefcase,
-  FaBuilding,
-  FaChartBar,
-  FaHome,
-  FaInfoCircle,
-  FaSearch,
-} from "react-icons/fa";
+import { FaChartBar, FaHome, FaInfoCircle, FaSearch } from "react-icons/fa";
 
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../Contexts/AuthContext";
@@ -19,15 +12,11 @@ const NavigationLinks = () => {
       icon: <FaHome />,
     },
     {
-      name: "Jobs",
-      path: "/jobs",
-      icon: <FaBriefcase />,
+      name: "Chats",
+      path: "/recent-chats",
+      icon: <FaHome />,
     },
-    {
-      name: "Companies",
-      path: "/get-companies",
-      icon: <FaBuilding />,
-    },
+
     {
       name: "About",
       path: "/about",
