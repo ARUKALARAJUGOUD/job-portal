@@ -86,22 +86,22 @@ export const getUserApplication = async (req, res) => {
     const cachedKey = `userApplications${id}`;
   
 
+    const cachedData = await connection.get(cachedKey);
+
+    // console.log("Cached Data:", cachedData);
+
     // const cachedData = await connection.get(cachedKey);
-
-    // // console.log("Cached Data:", cachedData);
-
-    // // const cachedData = await connection.get(cachedKey);
-    // if (cachedData) {
-    //   try {
-    //     return res.status(200).json({
-    //       success: true,
-    //       source: "redis",
-    //       applications: JSON.parse(cachedData),
-    //     });
-    //   } catch (error) {
-    //     await connection.del(cachedKey);
-    //   }
-    // }
+    if (cachedData) {
+      try {
+        return res.status(200).json({
+          success: true,
+          source: "redis",
+          applications: JSON.parse(cachedData),
+        });
+      } catch (error) {
+        await connection.del(cachedKey);
+      }
+    }
    const applications = await Application.find({ candidate: id })
   .populate("candidate")
   .populate("resume")
