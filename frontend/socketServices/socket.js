@@ -5,7 +5,7 @@ import { io } from "socket.io-client";
 //   withCredentials: true,
 // });
 
-export const socket = io(import.meta.env.VITE_API_URL, {
+export const socket = io("https://job-portal-backend-xspa.onrender.com", {
   transports: ["websocket"],
   reconnection: true,
   reconnectionAttempts: Infinity,
