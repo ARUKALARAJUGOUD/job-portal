@@ -1,4 +1,4 @@
-import { FaChartBar, FaHome, FaInfoCircle, FaSearch } from "react-icons/fa";
+import { FaChartBar, FaHome, FaInfoCircle, FaSearch,FaFacebookMessenger  } from "react-icons/fa";
 
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../Contexts/AuthContext";
@@ -14,7 +14,7 @@ const NavigationLinks = () => {
     {
       name: "Chats",
       path: "/recent-chats",
-      icon: <FaHome />,
+      icon: <FaFacebookMessenger  />,
     },
 
     {

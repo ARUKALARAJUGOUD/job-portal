@@ -11,7 +11,7 @@ export const initSocket = (server) => {
 
   const io = new Server(server, {
     cors: {
-      origin: ["http://localhost:5173", "https://nextcareerstep.vercel.app"],
+      origin: ["http://localhost:5173","https://nextcareerstep.vercel.app"],// "https://nextcareerstep.vercel.app"
       methods: ["GET", "POST"],
       credentials: true,
     },

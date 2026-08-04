@@ -45,11 +45,11 @@ const Navbar = () => {
       path: "/saved-jobs",
       icon: <FaBookmark />,
     },
-    {
-      title: "Settings",
-      path: "/settings",
-      icon: <FaCog />,
-    },
+    // {
+    //   title: "Settings",
+    //   path: "/settings",
+    //   icon: <FaCog />,
+    // },
     {
       title: "Change Password",
       path: "/change-password",

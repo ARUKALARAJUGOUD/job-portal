@@ -39,7 +39,7 @@ const secret = crypto.randomBytes(64).toString("hex");
 // console.log("NODE_ENV:", process.env.NODE_ENV);
 //used in the cors
 const allowedOrigins = [
-  // "http://localhost:5173",
+  "http://localhost:5173",
   "https://nextcareerstep.vercel.app",
 ];
 
