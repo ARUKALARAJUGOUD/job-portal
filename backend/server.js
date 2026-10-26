@@ -41,7 +41,7 @@ const secret = crypto.randomBytes(64).toString("hex");
 const allowedOrigins = [
   "http://localhost:5173",
   "https://nextcareerstep.vercel.app",
-];
+]; 
 
 app.use(
   cors({
@@ -124,5 +124,6 @@ DataBase();
 const PORT = process.env.PORT || 5000;
 initSocket(server);
 server.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log("server is running")
+  console.log(`Server is running on port ${PORT} `);
 });
